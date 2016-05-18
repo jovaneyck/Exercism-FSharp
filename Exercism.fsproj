@@ -64,6 +64,12 @@
     <Compile Include="sum-of-multiples\SumOfMultiplesTest.fs">
       <Link>SumOfMultiplesTest.fs</Link>
     </Compile>
+    <Compile Include="bob\Bob.fs">
+      <Link>Bob.fs</Link>
+    </Compile>
+    <Compile Include="bob\BobTest.fs">
+      <Link>BobTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
