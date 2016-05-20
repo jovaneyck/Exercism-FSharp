@@ -70,6 +70,12 @@
     <Compile Include="bob\BobTest.fs">
       <Link>BobTest.fs</Link>
     </Compile>
+    <Compile Include="space-age\SpaceAge.fs">
+      <Link>SpaceAge.fs</Link>
+    </Compile>
+    <Compile Include="space-age\SpaceAgeTest.fs">
+      <Link>SpaceAgeTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
