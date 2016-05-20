@@ -76,6 +76,12 @@
     <Compile Include="space-age\SpaceAgeTest.fs">
       <Link>SpaceAgeTest.fs</Link>
     </Compile>
+    <Compile Include="gigasecond\Gigasecond.fs">
+      <Link>Gigasecond.fs</Link>
+    </Compile>
+    <Compile Include="gigasecond\GigasecondTest.fs">
+      <Link>GigasecondTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
