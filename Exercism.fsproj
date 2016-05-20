@@ -82,6 +82,12 @@
     <Compile Include="gigasecond\GigasecondTest.fs">
       <Link>GigasecondTest.fs</Link>
     </Compile>
+    <Compile Include="triangle\Triangle.fs">
+      <Link>Triangle.fs</Link>
+    </Compile>
+    <Compile Include="triangle\TriangleTest.fs">
+      <Link>TriangleTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
