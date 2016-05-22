@@ -88,6 +88,12 @@
     <Compile Include="triangle\TriangleTest.fs">
       <Link>TriangleTest.fs</Link>
     </Compile>
+    <Compile Include="beer-song\BeerSong.fs">
+      <Link>BeerSong.fs</Link>
+    </Compile>
+    <Compile Include="beer-song\BeerSongTest.fs">
+      <Link>BeerSongTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
