@@ -94,6 +94,12 @@
     <Compile Include="beer-song\BeerSongTest.fs">
       <Link>BeerSongTest.fs</Link>
     </Compile>
+    <Compile Include="robot-name\RobotName.fs">
+      <Link>RobotName.fs</Link>
+    </Compile>
+    <Compile Include="robot-name\RobotNameTest.fs">
+      <Link>RobotNameTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
