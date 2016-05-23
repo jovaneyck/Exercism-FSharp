@@ -112,6 +112,12 @@
     <Compile Include="grains\GrainsTest.fs">
       <Link>GrainsTest.fs</Link>
     </Compile>
+    <Compile Include="leap\LeapYear.fs">
+      <Link>LeapYear.fs</Link>
+    </Compile>
+    <Compile Include="leap\LeapYearTests.fs">
+      <Link>LeapYearTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
