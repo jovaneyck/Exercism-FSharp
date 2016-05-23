@@ -106,6 +106,12 @@
     <Compile Include="bank-account\BankAccountTest.fs">
       <Link>BankAccountTest.fs</Link>
     </Compile>
+    <Compile Include="grains\Grains.fs">
+      <Link>Grains.fs</Link>
+    </Compile>
+    <Compile Include="grains\GrainsTest.fs">
+      <Link>GrainsTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
