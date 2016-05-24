@@ -118,6 +118,12 @@
     <Compile Include="leap\LeapYearTests.fs">
       <Link>LeapYearTests.fs</Link>
     </Compile>
+    <Compile Include="binary\Binary.fs">
+      <Link>Binary.fs</Link>
+    </Compile>
+    <Compile Include="binary\BinaryTests.fs">
+      <Link>BinaryTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
