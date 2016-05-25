@@ -136,6 +136,12 @@
     <Compile Include="trinary\TrinaryTests.fs">
       <Link>TrinaryTests.fs</Link>
     </Compile>
+    <Compile Include="etl\ETL.fs">
+      <Link>ETL.fs</Link>
+    </Compile>
+    <Compile Include="etl\ETLTests.fs">
+      <Link>ETLTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
