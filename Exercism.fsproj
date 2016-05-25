@@ -130,6 +130,12 @@
     <Compile Include="hamming\HammingTests.fs">
       <Link>HammingTests.fs</Link>
     </Compile>
+    <Compile Include="trinary\Trinary.fs">
+      <Link>Trinary.fs</Link>
+    </Compile>
+    <Compile Include="trinary\TrinaryTests.fs">
+      <Link>TrinaryTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
