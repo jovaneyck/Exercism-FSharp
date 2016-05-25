@@ -124,6 +124,12 @@
     <Compile Include="binary\BinaryTests.fs">
       <Link>BinaryTests.fs</Link>
     </Compile>
+    <Compile Include="hamming\Hamming.fs">
+      <Link>Hamming.fs</Link>
+    </Compile>
+    <Compile Include="hamming\HammingTests.fs">
+      <Link>HammingTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
