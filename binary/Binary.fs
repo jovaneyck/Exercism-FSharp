@@ -1,28 +1,25 @@
 ﻿module Binary
 
-let private without substr (str : string) =
-    str.Replace(substr, "")
-
-let private isValidBinary (input : string) =
-    let invalidChars = 
-        input 
-        |> without "1" 
-        |> without "0"
-    invalidChars 
-    |> Seq.isEmpty
+let private add first second = 
+    match first, second with
+    | Some f, Some s -> Some (f + s)
+    | _ -> None
 
 let private convert (input : string) =
     input
-    |> Seq.map (string >> float)
     |> Seq.rev
-    |> Seq.indexed
-    |> Seq.map 
-        (fun (idx, digit) -> 
-            let n = idx |> float
-            digit * 2.0 ** n)
-    |> Seq.sum
-    |> int
+    |> Seq.mapi
+        (fun index digit ->
+            match digit with
+            | '0'           -> Some 0
+            | '1'           -> Some <| pown 2 index
+            | invalid       -> None)
+    |> Seq.reduce add
+
+let orDefault theDefault value = 
+    value 
+    |> defaultArg <| theDefault
 
 let toDecimal input  = 
-    if not (isValidBinary input) then 0
-    else convert input
+    convert input
+    |> orDefault 0
