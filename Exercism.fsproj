@@ -148,6 +148,13 @@
     <Compile Include="octal\OctalTests.fs">
       <Link>OctalTests.fs</Link>
     </Compile>
+    <Compile Include="pig-latin\PigLatin.fs">
+      <Link>PigLatin.fs</Link>
+    </Compile>
+    <Compile Include="pig-latin\PigLatinTests.fs">
+      <Link>PigLatinTests.fs</Link>
+    </Compile>
+    <None Include="Scratchpad.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
