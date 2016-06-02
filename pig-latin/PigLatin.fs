@@ -16,11 +16,11 @@ let consonantish =
 
 let startsWithAnyOf chunks word =
     chunks 
-        |> List.map (fun v -> sprintf "^(%s)(.*)" v)
-        |> List.map (fun regex -> Regex.Match(word, regex))
-        |> List.filter (fun possibleMatch -> possibleMatch.Success)
-        |> List.map(fun m -> (m.Groups.[1].Value, m.Groups.[2].Value))
-        |> List.tryHead
+    |> List.map (fun v -> sprintf "^(%s)(.*)" v)
+    |> List.map (fun regex -> Regex.Match(word, regex))
+    |> List.filter (fun possibleMatch -> possibleMatch.Success)
+    |> List.map(fun m -> (m.Groups.[1].Value, m.Groups.[2].Value))
+    |> List.tryHead
 
 let (|StartsWithAVowel|_|) word = 
     match word |> startsWithAnyOf vowelish with
