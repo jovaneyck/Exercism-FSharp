@@ -155,6 +155,12 @@
       <Link>PigLatinTests.fs</Link>
     </Compile>
     <None Include="Scratchpad.fsx" />
+    <Compile Include="word-count\WordCount.fs">
+      <Link>WordCount.fs</Link>
+    </Compile>
+    <Compile Include="word-count\WordCountTests.fs">
+      <Link>WordCountTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
