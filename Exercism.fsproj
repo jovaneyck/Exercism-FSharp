@@ -161,6 +161,12 @@
     <Compile Include="word-count\WordCountTests.fs">
       <Link>WordCountTests.fs</Link>
     </Compile>
+    <Compile Include="roman-numerals\RomanNumeral.fs">
+      <Link>RomanNumeral.fs</Link>
+    </Compile>
+    <Compile Include="roman-numerals\RomanNumeralTests.fs">
+      <Link>RomanNumeralTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
