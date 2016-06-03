@@ -167,6 +167,12 @@
     <Compile Include="roman-numerals\RomanNumeralTests.fs">
       <Link>RomanNumeralTests.fs</Link>
     </Compile>
+    <Compile Include="rna-transcription\RNATranscription.fs">
+      <Link>RNATranscription.fs</Link>
+    </Compile>
+    <Compile Include="rna-transcription\RNATranscriptionTests.fs">
+      <Link>RNATranscriptionTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
