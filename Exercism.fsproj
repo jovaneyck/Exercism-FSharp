@@ -173,6 +173,12 @@
     <Compile Include="rna-transcription\RNATranscriptionTests.fs">
       <Link>RNATranscriptionTests.fs</Link>
     </Compile>
+    <Compile Include="accumulate\Accumulate.fs">
+      <Link>Accumulate.fs</Link>
+    </Compile>
+    <Compile Include="accumulate\AccumulateTests.fs">
+      <Link>AccumulateTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
