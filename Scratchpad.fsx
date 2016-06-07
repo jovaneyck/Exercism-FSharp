@@ -1,19 +1,18 @@
-﻿open System.Text.RegularExpressions
+﻿#r @"packages\Unquote.3.1.1\lib\net45\Unquote.dll"
+open Swensen.Unquote
 
-let vowels = ["a";"e"]
+let decode score = 
+    let rec decode acc score =
+        if score = 0 then acc
+        else 
+            let digit = score % 2
+            let remainder = score / 2
+            decode (digit::acc) remainder
+    decode [] score
 
-let(|StartsWithVowel|_|) input =
-    match
-        vowels 
-        |> List.map (fun v -> sprintf "^(%s)(.*)" v)
-        |> List.map (fun regex -> Regex.Match(input, regex))
-        |> List.filter (fun possibleMatch -> possibleMatch.Success)
-        |> List.map(fun m -> (m.Groups.[1].Value, m.Groups.[2].Value))
-        |> List.tryHead
-        with
-        | None -> None
-        | Some(vowel, remainder) -> Some <| StartsWithVowel(vowel, remainder)
+test  <@ decode 1 = [1]@>
+test  <@ decode 2 = [1;0]@>
+test  <@ decode 4 = [1;0;0]@>
+test  <@ decode 6 = [1;1;0]@>
+test  <@ decode 7 = [1;1;1]@>
 
-match "estje" with
-| StartsWithVowel(v, rest) -> printfn "Starts with %s - remainder %s" v rest
-| _ -> printfn "No match"

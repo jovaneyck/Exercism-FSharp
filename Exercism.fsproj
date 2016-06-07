@@ -179,6 +179,12 @@
     <Compile Include="accumulate\AccumulateTests.fs">
       <Link>AccumulateTests.fs</Link>
     </Compile>
+    <Compile Include="allergies\Allergies.fs">
+      <Link>Allergies.fs</Link>
+    </Compile>
+    <Compile Include="allergies\AllergiesTests.fs">
+      <Link>AllergiesTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -192,6 +198,10 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
+    <Reference Include="Unquote">
+      <HintPath>packages\Unquote.3.1.1\lib\net45\Unquote.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
