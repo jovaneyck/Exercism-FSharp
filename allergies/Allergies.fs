@@ -1,33 +1,22 @@
 ﻿module Allergies
 
+open System
+
+[<Flags>]
 type Allergen =
-    | Peanuts
-    | Cats
-    | Strawberries
-    | Eggs
-    | Shellfish
-    | Chocolate
-    | Pollen
-    | Tomatoes
+    | Eggs = 1
+    | Peanuts = 2
+    | Shellfish = 4
+    | Strawberries = 8
+    | Tomatoes = 16
+    | Chocolate = 32
+    | Pollen = 64
+    | Cats = 128
+   
+let allergicTo allergen score = 
+    (score |> enum<Allergen>).HasFlag(allergen)
 
-//Order is important here
-let allergens = [Eggs; Peanuts; Shellfish; Strawberries; Tomatoes; Chocolate; Pollen; Cats]
-
-let toBinary score = 
-    let rec decode acc score =
-        if score = 0 then acc
-        else 
-            let digit = score % 2
-            let remainder = score / 2
-            decode (digit::acc) remainder
-    decode [] score
-    
 let allergies score =
-    toBinary score
-    |> List.rev
-    |> Seq.zip allergens
-    |> Seq.filter (fun (_, allergic) -> allergic = 1)
-    |> Seq.map (fun (allergen, _) -> allergen)
-
-let allergicTo ingredient score = 
-    allergies score |> Seq.contains ingredient
+    Enum.GetValues(typeof<Allergen>)
+    |> Seq.cast<Allergen>
+    |> Seq.filter (fun allergen -> allergicTo allergen score)
