@@ -185,6 +185,12 @@
     <Compile Include="allergies\AllergiesTests.fs">
       <Link>AllergiesTests.fs</Link>
     </Compile>
+    <Compile Include="anagram\Anagram.fs">
+      <Link>Anagram.fs</Link>
+    </Compile>
+    <Compile Include="anagram\AnagramTests.fs">
+      <Link>AnagramTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
