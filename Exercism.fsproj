@@ -209,6 +209,12 @@
     <Compile Include="strain\StrainTests.fs">
       <Link>StrainTests.fs</Link>
     </Compile>
+    <Compile Include="pangram\Pangram.fs">
+      <Link>Pangram.fs</Link>
+    </Compile>
+    <Compile Include="pangram\PangramTest.fs">
+      <Link>PangramTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
