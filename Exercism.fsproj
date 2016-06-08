@@ -197,6 +197,12 @@
     <Compile Include="clock\ClockTests.fs">
       <Link>ClockTests.fs</Link>
     </Compile>
+    <Compile Include="series\Series.fs">
+      <Link>Series.fs</Link>
+    </Compile>
+    <Compile Include="series\SeriesTests.fs">
+      <Link>SeriesTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
