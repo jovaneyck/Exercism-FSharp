@@ -203,6 +203,12 @@
     <Compile Include="series\SeriesTests.fs">
       <Link>SeriesTests.fs</Link>
     </Compile>
+    <Compile Include="strain\Strain.fs">
+      <Link>Strain.fs</Link>
+    </Compile>
+    <Compile Include="strain\StrainTests.fs">
+      <Link>StrainTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
