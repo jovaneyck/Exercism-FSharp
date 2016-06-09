@@ -1,4 +1,4 @@
-module Seq
+module MySeq
 
 let rec keep f xs = 
     seq {

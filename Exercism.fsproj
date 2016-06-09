@@ -215,6 +215,12 @@
     <Compile Include="pangram\PangramTest.fs">
       <Link>PangramTest.fs</Link>
     </Compile>
+    <Compile Include="atbash-cipher\Atbash.fs">
+      <Link>Atbash.fs</Link>
+    </Compile>
+    <Compile Include="atbash-cipher\AtbashTests.fs">
+      <Link>AtbashTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
