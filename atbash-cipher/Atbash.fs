@@ -1,25 +1,25 @@
 module Atbash
 
+open System
 open System.Text.RegularExpressions
 
-let plain = ['a'..'z']
-let cipher = plain |> List.rev
-let encodeMap = Seq.zip plain cipher |> Map.ofSeq
+let letters = ['a'..'z']
+let numbers = ['0'..'9']
+let encodeMap =
+    List.append
+        (List.zip letters (letters |> List.rev))
+        (List.zip numbers numbers)
+    |> Map.ofList
+let encodeOne char = encodeMap |> Map.find char
 
-let toString = (Seq.toArray >> System.String)
 let toLower (s : string) = s.ToLower()
-let stripNonAlphabet s = Regex.Replace(s, "[^(\w)]", "")
+let stripNonAlphabet s = Regex.Replace(s, "[^\w]", "")
 let sanitize = toLower >> stripNonAlphabet
-
-let encodeLetter letter =
-    match encodeMap |> Map.tryFind letter with
-    | None -> letter
-    | Some translation -> translation
 
 let encode input : string = 
     input
     |> sanitize
-    |> Seq.map encodeLetter
+    |> Seq.map encodeOne
     |> Seq.chunkBySize 5
-    |> Seq.map toString
-    |> Seq.reduce (sprintf "%s %s")
+    |> Seq.map String
+    |> String.concat " "
