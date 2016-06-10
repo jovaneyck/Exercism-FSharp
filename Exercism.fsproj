@@ -221,6 +221,12 @@
     <Compile Include="atbash-cipher\AtbashTests.fs">
       <Link>AtbashTests.fs</Link>
     </Compile>
+    <Compile Include="grade-school\GradeSchool.fs">
+      <Link>GradeSchool.fs</Link>
+    </Compile>
+    <Compile Include="grade-school\GradeSchoolTests.fs">
+      <Link>GradeSchoolTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
