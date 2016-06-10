@@ -227,6 +227,12 @@
     <Compile Include="grade-school\GradeSchoolTests.fs">
       <Link>GradeSchoolTests.fs</Link>
     </Compile>
+    <Compile Include="raindrops\Raindrops.fs">
+      <Link>Raindrops.fs</Link>
+    </Compile>
+    <Compile Include="raindrops\RaindropsTests.fs">
+      <Link>RaindropsTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
