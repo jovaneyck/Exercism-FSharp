@@ -9,11 +9,6 @@ let grade grade school =
 
 let add student g school = 
     let currentStudents = school |> grade g
-    
-    school 
-    |> Map.add g ((student :: currentStudents) |> List.sort)
+    school |> Map.add g ((student :: currentStudents) |> List.sort)
 
-let roster school = 
-    school
-    |> Map.toSeq
-    |> Seq.sort
+let roster school = school |> Map.toSeq
