@@ -6,8 +6,7 @@ let convert number =
         [for (d,w) in specialCases do 
             if number % d = 0 then yield w]
 
-    if translations |> List.isEmpty then
-        string number
-    else
-        translations |> String.concat ""
+    match translations with
+    | [] -> string number
+    | t  -> t |> String.concat ""
     
