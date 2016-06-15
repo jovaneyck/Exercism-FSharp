@@ -233,6 +233,12 @@
     <Compile Include="raindrops\RaindropsTests.fs">
       <Link>RaindropsTests.fs</Link>
     </Compile>
+    <Compile Include="acronym\Acronym.fs">
+      <Link>Acronym.fs</Link>
+    </Compile>
+    <Compile Include="acronym\AcronymTests.fs">
+      <Link>AcronymTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
