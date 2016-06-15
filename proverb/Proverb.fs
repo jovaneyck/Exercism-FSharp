@@ -3,17 +3,21 @@
 let words = 
     ["nail"; "shoe"; "horse"; "rider"; "message"; "battle"; "kingdom"]
 
-let line number =
-    if number = 7 then
+let proverbLines = 
+    let seventh = 
         "And all for the want of a horseshoe nail."
-    else
-        match words.[number - 1 .. number] with
-        | [f; s] ->
-            sprintf "For want of a %s the %s was lost." f s
-        | _ -> 
-            failwith <| sprintf "don't know line %d" number
+    let verses =
+        words
+        |> Seq.pairwise
+        |> Seq.map (fun (f,s) -> 
+            sprintf "For want of a %s the %s was lost." f s)
 
-let proverb = 
-    [1..7]
-    |> List.map line
-    |> String.concat "\n"
+    Seq.append verses [seventh]
+
+let proverb = proverbLines |> (String.concat "\n")
+
+let line number =
+    proverbLines 
+    |> Seq.indexed
+    |> Seq.find (fun (i, _) -> i + 1 = number)
+    |> snd
