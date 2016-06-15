@@ -3,21 +3,18 @@
 let words = 
     ["nail"; "shoe"; "horse"; "rider"; "message"; "battle"; "kingdom"]
 
-let proverbLines = 
-    let seventh = 
+let line number =
+    match number with
+    | 7 ->
         "And all for the want of a horseshoe nail."
-    let verses =
+    | n ->
         words
         |> Seq.pairwise
-        |> Seq.map (fun (f,s) -> 
-            sprintf "For want of a %s the %s was lost." f s)
+        |> Seq.item (n - 1)
+        |> (fun (f,s) -> sprintf "For want of a %s the %s was lost." f s)
 
-    Seq.append verses [seventh]
+let proverb = 
+    [1..7] 
+    |> Seq.map line
+    |> String.concat "\n"
 
-let proverb = proverbLines |> (String.concat "\n")
-
-let line number =
-    proverbLines 
-    |> Seq.indexed
-    |> Seq.find (fun (i, _) -> i + 1 = number)
-    |> snd
