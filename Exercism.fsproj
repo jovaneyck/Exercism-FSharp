@@ -239,6 +239,12 @@
     <Compile Include="acronym\AcronymTests.fs">
       <Link>AcronymTests.fs</Link>
     </Compile>
+    <Compile Include="proverb\Proverb.fs">
+      <Link>Proverb.fs</Link>
+    </Compile>
+    <Compile Include="proverb\ProverbTest.fs">
+      <Link>ProverbTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
