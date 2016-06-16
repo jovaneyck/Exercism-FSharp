@@ -245,6 +245,12 @@
     <Compile Include="proverb\ProverbTest.fs">
       <Link>ProverbTest.fs</Link>
     </Compile>
+    <Compile Include="crypto-square\CryptoSquare.fs">
+      <Link>CryptoSquare.fs</Link>
+    </Compile>
+    <Compile Include="crypto-square\CryptoSquareTests.fs">
+      <Link>CryptoSquareTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
