@@ -31,23 +31,14 @@ let plaintextSegments text =
     |> normalizePlaintext
     |> chunk (size text)
 
-let elementAtOrNothing index sequence = 
-    match sequence |> Seq.tryItem index with
-    | None -> ""
-    | Some letter -> letter |> string
-
-let elementsInColumn square columnNb =
-    square 
-    |> Seq.map (fun row -> row |> elementAtOrNothing columnNb)
+let charsToString (input : char seq) : string = 
+    new String(input |> Seq.toArray)
 
 let columns square = 
-    let nbColumns = 
-        square 
-        |> Seq.head 
-        |> String.length
-
-    [0 .. nbColumns - 1]
-    |> Seq.collect (elementsInColumn square)
+    square
+    |> Seq.collect (fun row -> row |> Seq.indexed)
+    |> Seq.groupBy fst
+    |> Seq.map (fun (_, column) -> column |> Seq.map snd |> charsToString)    
 
 let ciphertext text = 
     text
