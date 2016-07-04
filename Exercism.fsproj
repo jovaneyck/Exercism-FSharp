@@ -251,6 +251,12 @@
     <Compile Include="crypto-square\CryptoSquareTests.fs">
       <Link>CryptoSquareTests.fs</Link>
     </Compile>
+    <Compile Include="linked-list\LinkedList.fs">
+      <Link>LinkedList.fs</Link>
+    </Compile>
+    <Compile Include="linked-list\LinkedListTests.fs">
+      <Link>LinkedListTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
