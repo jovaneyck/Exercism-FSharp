@@ -263,6 +263,12 @@
     <Compile Include="luhn\LuhnTests.fs">
       <Link>LuhnTests.fs</Link>
     </Compile>
+    <Compile Include="scrabble-score\ScrabbleScore.fs">
+      <Link>ScrabbleScore.fs</Link>
+    </Compile>
+    <Compile Include="scrabble-score\ScrabbleScoreTests.fs">
+      <Link>ScrabbleScoreTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
