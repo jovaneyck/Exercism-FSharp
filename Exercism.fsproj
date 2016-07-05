@@ -257,6 +257,12 @@
     <Compile Include="linked-list\LinkedListTests.fs">
       <Link>LinkedListTests.fs</Link>
     </Compile>
+    <Compile Include="luhn\Luhn.fs">
+      <Link>Luhn.fs</Link>
+    </Compile>
+    <Compile Include="luhn\LuhnTests.fs">
+      <Link>LuhnTests.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
