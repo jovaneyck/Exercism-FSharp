@@ -269,6 +269,12 @@
     <Compile Include="scrabble-score\ScrabbleScoreTests.fs">
       <Link>ScrabbleScoreTests.fs</Link>
     </Compile>
+    <Compile Include="kindergarten-garden\KinderGartenGarden.fs">
+      <Link>KinderGartenGarden.fs</Link>
+    </Compile>
+    <Compile Include="kindergarten-garden\KinderGartenGardenTest.fs">
+      <Link>KinderGartenGardenTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
