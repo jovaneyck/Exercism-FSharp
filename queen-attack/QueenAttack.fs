@@ -18,6 +18,6 @@ let canAttackValid p1 p2 =
 
 let canAttack f s = 
     if f = s then
-        failwith "Queens cannot occupy the same space"
+        invalidOp "Queens cannot occupy the same space"
     else
         canAttackValid f s
