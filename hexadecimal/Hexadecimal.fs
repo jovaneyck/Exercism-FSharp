@@ -21,14 +21,21 @@ let digitsToDecimalValue =
         ('f', 15)
     ] |> Map.ofSeq
 
-let add f s = 
-    match (f,s) with
+let apply f x y = 
+    match x, y with
     | None, _ -> None
     | _, None -> None
-    | Some fst, Some snd -> Some (baseValue * fst + snd)
+    | Some sx, Some sy -> Some (f sx sy)
+
+let add f s = baseValue * f + s
+
+let getOrElse defaultValue o =
+    match o with
+    | Some v -> v
+    | None -> defaultValue
 
 let toDecimal hex = 
     hex
-    |> Seq.map (fun digit -> digitsToDecimalValue |> Map.tryFind digit)
-    |> Seq.reduce add
-    |> Option.fold (+) 0
+    |> Seq.map (fun digit -> Map.tryFind digit digitsToDecimalValue)
+    |> Seq.reduce (apply add)
+    |> getOrElse 0
