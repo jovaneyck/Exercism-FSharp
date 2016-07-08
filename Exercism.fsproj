@@ -281,6 +281,12 @@
     <Compile Include="hexadecimal\HexadecimalTest.fs">
       <Link>HexadecimalTest.fs</Link>
     </Compile>
+    <Compile Include="queen-attack\QueenAttack.fs">
+      <Link>QueenAttack.fs</Link>
+    </Compile>
+    <Compile Include="queen-attack\QueenAttackTest.fs">
+      <Link>QueenAttackTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
