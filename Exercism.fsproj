@@ -287,6 +287,12 @@
     <Compile Include="queen-attack\QueenAttackTest.fs">
       <Link>QueenAttackTest.fs</Link>
     </Compile>
+    <Compile Include="meetup\Meetup.fs">
+      <Link>Meetup.fs</Link>
+    </Compile>
+    <Compile Include="meetup\MeetupTest.fs">
+      <Link>MeetupTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
