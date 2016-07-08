@@ -52,6 +52,7 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="Scratchpad.fsx" />
     <Compile Include="difference-of-squares\DifferenceOfSquares.fs">
       <Link>DifferenceOfSquares.fs</Link>
     </Compile>
@@ -154,7 +155,6 @@
     <Compile Include="pig-latin\PigLatinTests.fs">
       <Link>PigLatinTests.fs</Link>
     </Compile>
-    <None Include="Scratchpad.fsx" />
     <Compile Include="word-count\WordCount.fs">
       <Link>WordCount.fs</Link>
     </Compile>
