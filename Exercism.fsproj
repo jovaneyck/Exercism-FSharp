@@ -275,6 +275,12 @@
     <Compile Include="kindergarten-garden\KinderGartenGardenTest.fs">
       <Link>KinderGartenGardenTest.fs</Link>
     </Compile>
+    <Compile Include="hexadecimal\Hexadecimal.fs">
+      <Link>Hexadecimal.fs</Link>
+    </Compile>
+    <Compile Include="hexadecimal\HexadecimalTest.fs">
+      <Link>HexadecimalTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
