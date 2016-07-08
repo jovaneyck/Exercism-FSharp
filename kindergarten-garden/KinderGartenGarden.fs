@@ -27,9 +27,7 @@ let defaultChildren =
         "Larry"
     ]
 
-let split (s : string) = 
-    s.Split([|'\n'|], StringSplitOptions.None)
-    |> Seq.map (fun line -> seq {for letter in line do yield letter})
+let split (s : string) = s.Split([|'\n'|], StringSplitOptions.None)
 
 let parse plant =
     match plant with
@@ -37,7 +35,7 @@ let parse plant =
     | 'R' -> Radishes
     | 'G' -> Grass
     | 'V' -> Violets
-    | unknown -> failwith <| sprintf "Unknown plant: %c" unknown
+    | unknown -> failwithf "Unknown plant: %c" unknown
 
 let garden children description : Garden = 
     let parsedPlants =
@@ -47,19 +45,13 @@ let garden children description : Garden =
     let plantsPerChild =
         parsedPlants
         |> Seq.map (Seq.chunkBySize 2)
-        |> Seq.collect Seq.indexed
-        |> Seq.groupBy (fun (index,_) -> index)
-        |> Seq.map (fun (_, v) -> v)
-        |> Seq.map (fun g -> g |> Seq.collect (fun (_,p) -> p ))
+        |> Seq.collect (Seq.zip children)
+        |> Seq.groupBy (fun (child,_) -> child)
+        |> Seq.map (fun (child, grouping) -> 
+            (child, grouping |> Seq.collect(fun (_, plants) -> plants)))
 
-    plantsPerChild
-    |> Seq.zip children
-    |> Map.ofSeq
+    plantsPerChild |> Map.ofSeq
 
-let defaultGarden description = 
-    garden defaultChildren description
+let defaultGarden = garden defaultChildren
 
-let lookupPlants child garden = 
-    match garden |> Map.tryFind child with
-    | Some plants -> plants
-    | None -> Seq.empty
+let lookupPlants child garden = defaultArg (garden |> Map.tryFind child) Seq.empty

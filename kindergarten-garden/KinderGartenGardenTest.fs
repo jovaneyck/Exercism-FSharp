@@ -11,7 +11,9 @@ let ``Missing child`` () =
 
 [<Test>]
 let ``Alice`` () =
-    Assert.That(defaultGarden "RC\nGG" |> lookupPlants "Alice", Is.EqualTo([Plant.Radishes; Plant.Clover; Plant.Grass; Plant.Grass]))
+    let actual = defaultGarden "RC\nGG" |> lookupPlants "Alice"
+    printfn "%A" actual
+    Assert.That(actual, Is.EqualTo([Plant.Radishes; Plant.Clover; Plant.Grass; Plant.Grass]))
     Assert.That(defaultGarden "VC\nRC" |> lookupPlants "Alice", Is.EqualTo([Plant.Violets; Plant.Clover; Plant.Radishes; Plant.Clover]))
     
 [<Test>]
