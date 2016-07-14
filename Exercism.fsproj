@@ -305,6 +305,12 @@
     <Compile Include="nucleotide-count\NucleotideCountTest.fs">
       <Link>NucleotideCountTest.fs</Link>
     </Compile>
+    <Compile Include="largest-series-product\LargestSeriesProduct.fs">
+      <Link>LargestSeriesProduct.fs</Link>
+    </Compile>
+    <Compile Include="largest-series-product\LargestSeriesProductTest.fs">
+      <Link>LargestSeriesProductTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
