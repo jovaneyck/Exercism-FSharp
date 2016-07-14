@@ -299,6 +299,12 @@
     <Compile Include="binary-search-tree\BinarySearchTreeTest.fs">
       <Link>BinarySearchTreeTest.fs</Link>
     </Compile>
+    <Compile Include="nucleotide-count\NucleotideCount.fs">
+      <Link>NucleotideCount.fs</Link>
+    </Compile>
+    <Compile Include="nucleotide-count\NucleotideCountTest.fs">
+      <Link>NucleotideCountTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
