@@ -4,6 +4,11 @@ open NUnit.Framework
 
 open Sieve
 
+
+[<Test>]
+let ``Finds no primes smaller than 2`` () =
+    Assert.That(primesUpTo 1, Is.EqualTo([]))
+
 [<Test>]
 let ``Finds first prime`` () =
     Assert.That(primesUpTo 2, Is.EqualTo([ 2 ]))
