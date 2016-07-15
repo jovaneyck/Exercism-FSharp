@@ -18,7 +18,7 @@ let ordinals =
 
 let gifts = 
     [
-        "a Partridge"
+        "a Partridge in a Pear Tree"
         "two Turtle Doves"
         "three French Hens"
         "four Calling Birds"
@@ -52,7 +52,7 @@ let giftTextFor day =
 
 let verse day = 
     sprintf 
-        "On the %s day of Christmas my true love gave to me, %s in a Pear Tree.\n" 
+        "On the %s day of Christmas my true love gave to me, %s.\n" 
         (ordinalFor day) 
         (giftTextFor day)
 

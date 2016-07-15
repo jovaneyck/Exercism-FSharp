@@ -323,6 +323,12 @@
     <Compile Include="twelve-days\TwelveDaysTest.fs">
       <Link>TwelveDaysTest.fs</Link>
     </Compile>
+    <Compile Include="sieve\Sieve.fs">
+      <Link>Sieve.fs</Link>
+    </Compile>
+    <Compile Include="sieve\SieveTest.fs">
+      <Link>SieveTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
