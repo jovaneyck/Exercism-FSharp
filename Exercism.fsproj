@@ -311,6 +311,12 @@
     <Compile Include="largest-series-product\LargestSeriesProductTest.fs">
       <Link>LargestSeriesProductTest.fs</Link>
     </Compile>
+    <Compile Include="matrix\Matrix.fs">
+      <Link>Matrix.fs</Link>
+    </Compile>
+    <Compile Include="matrix\MatrixTest.fs">
+      <Link>MatrixTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
