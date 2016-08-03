@@ -34,7 +34,7 @@ let ``Can parse and solve division problems`` () =
 [<Test>]
 let ``Can parse a question with multiple operators and it is left-associative`` () =
     Assert.That(
-        parseQuestion "What is 1 plus 2 plus 3?", 
+        parseExpression "1 + 2 + 3", 
         Is.EqualTo(Some (Plus(Plus(Constant(1), Constant(2)),Constant(3)))))
     
 [<Test>]
