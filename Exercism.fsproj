@@ -335,6 +335,12 @@
     <Compile Include="wordy\WordyTest.fs">
       <Link>WordyTest.fs</Link>
     </Compile>
+    <Compile Include="nth-prime\NthPrime.fs">
+      <Link>NthPrime.fs</Link>
+    </Compile>
+    <Compile Include="nth-prime\NthPrimeTest.fs">
+      <Link>NthPrimeTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
