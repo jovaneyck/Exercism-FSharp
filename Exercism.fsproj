@@ -341,6 +341,12 @@
     <Compile Include="nth-prime\NthPrimeTest.fs">
       <Link>NthPrimeTest.fs</Link>
     </Compile>
+    <Compile Include="palindrome-products\Palindrome.fs">
+      <Link>Palindrome.fs</Link>
+    </Compile>
+    <Compile Include="palindrome-products\PalindromeTest.fs">
+      <Link>PalindromeTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
