@@ -353,6 +353,12 @@
     <Compile Include="pascals-triangle\PascalsTriangleTest.fs">
       <Link>PascalsTriangleTest.fs</Link>
     </Compile>
+    <Compile Include="pythagorean-triplet\PythagoreanTriplet.fs">
+      <Link>PythagoreanTriplet.fs</Link>
+    </Compile>
+    <Compile Include="pythagorean-triplet\PythagoreanTripletTest.fs">
+      <Link>PythagoreanTripletTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
