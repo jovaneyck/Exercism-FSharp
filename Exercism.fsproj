@@ -347,6 +347,12 @@
     <Compile Include="palindrome-products\PalindromeTest.fs">
       <Link>PalindromeTest.fs</Link>
     </Compile>
+    <Compile Include="pascals-triangle\PascalsTriangle.fs">
+      <Link>PascalsTriangle.fs</Link>
+    </Compile>
+    <Compile Include="pascals-triangle\PascalsTriangleTest.fs">
+      <Link>PascalsTriangleTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
