@@ -377,6 +377,12 @@
     <Compile Include="robot-simulator\RobotSimulatorTest.fs">
       <Link>RobotSimulatorTest.fs</Link>
     </Compile>
+    <Compile Include="prime-factors\PrimeFactors.fs">
+      <Link>PrimeFactors.fs</Link>
+    </Compile>
+    <Compile Include="prime-factors\PrimeFactorsTest.fs">
+      <Link>PrimeFactorsTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
