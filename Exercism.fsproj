@@ -359,6 +359,18 @@
     <Compile Include="pythagorean-triplet\PythagoreanTripletTest.fs">
       <Link>PythagoreanTripletTest.fs</Link>
     </Compile>
+    <Compile Include="ocr-numbers\OcrNumbers.fs">
+      <Link>OcrNumbers.fs</Link>
+    </Compile>
+    <Compile Include="ocr-numbers\OcrNumbersTest.fs">
+      <Link>OcrNumbersTest.fs</Link>
+    </Compile>
+    <Compile Include="simple-linked-list\SimpleLinkedList.fs">
+      <Link>SimpleLinkedList.fs</Link>
+    </Compile>
+    <Compile Include="simple-linked-list\SimpleLinkedListTest.fs">
+      <Link>SimpleLinkedListTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
