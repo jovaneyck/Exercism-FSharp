@@ -27,7 +27,7 @@ let left =
     | South -> East
     | East -> North
 
-let turn shift ({Bearing = b} as robot) = {robot with Bearing = (shift b)}
+let turn shift robot = {robot with Bearing = (shift robot.Bearing)}
 let turnRight = turn right
 let turnLeft = turn left
 
@@ -38,7 +38,7 @@ let step (x,y) bearing =
     | South -> (x, y - 1)
     | West -> (x - 1, y)
 
-let advance ({Bearing = b; Position = pos} as robot) = {robot with Position = (step pos b)}
+let advance robot = {robot with Position = (step robot.Position robot.Bearing)}
 
 let parse = 
     function
