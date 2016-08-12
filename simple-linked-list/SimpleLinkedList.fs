@@ -38,11 +38,9 @@ let fromList list =
         | h :: t  -> fl (Cons(h, acc)) t
     fl Nil (list |> List.rev)
 
-let rec append element =
-    function
-    | Nil -> Cons(element, Nil)
-    | Cons(h,t) -> Cons(h, append element t)
-let rec reverse = 
-    function
-    | Nil -> Nil
-    | Cons(h,t) -> append h (reverse t)
+let reverse list = 
+    let rec rev acc =
+        function
+        | Nil -> acc
+        | Cons(h,t) -> rev (create h acc) t
+    rev Nil list
