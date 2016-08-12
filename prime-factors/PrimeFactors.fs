@@ -15,13 +15,15 @@ let primes =
     let initialCandidates = Seq.initInfinite <| (+) 2
     primesRec initialCandidates
 
-let primeFactorsFor number =
-    let rec factors acc number =
-        if number = 1L then 
+let factorsFor factors number =
+    let rec f acc number =
+        if number =1L then 
             acc |> List.rev
         else
             let factor =
-                primes
+                factors
                 |> Seq.find (fun p -> number % p = 0L)
-            factors (factor :: acc) (number / factor)
-    factors [] number
+            f (factor :: acc) (number / factor) 
+    f [] number
+
+let primeFactorsFor = factorsFor primes
