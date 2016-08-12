@@ -371,6 +371,12 @@
     <Compile Include="simple-linked-list\SimpleLinkedListTest.fs">
       <Link>SimpleLinkedListTest.fs</Link>
     </Compile>
+    <Compile Include="robot-simulator\RobotSimulator.fs">
+      <Link>RobotSimulator.fs</Link>
+    </Compile>
+    <Compile Include="robot-simulator\RobotSimulatorTest.fs">
+      <Link>RobotSimulatorTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">

@@ -1,0 +1,67 @@
+﻿module RobotSimulatorTest
+
+open NUnit.Framework
+
+open RobotSimulator
+
+[<Test>]
+let ``Turn right edge case`` () =
+    let robot = createRobot Bearing.West (0, 0)
+    let movedRobot = turnRight robot
+    Assert.That(movedRobot, Is.EqualTo(createRobot Bearing.North (0, 0)))
+
+[<Test>]
+let ``Turn left edge case`` () =
+    let robot = createRobot Bearing.North (0, 0)
+    let movedRobot = turnLeft robot
+    Assert.That(movedRobot, Is.EqualTo(createRobot Bearing.West (0, 0)))
+
+[<Test>]
+let ``Can advance north`` () =
+    let robot = createRobot Bearing.North (0, 0)
+    let movedRobot = advance robot
+    Assert.That(movedRobot, Is.EqualTo(createRobot Bearing.North (0, 1)))
+
+[<Test>]
+let ``Can advance east`` () =
+    let robot = createRobot Bearing.East (0, 0)
+    let movedRobot = advance robot
+    Assert.That(movedRobot, Is.EqualTo(createRobot Bearing.East (1, 0)))
+
+[<Test>]
+let ``Can advance south`` () =
+    let robot = createRobot Bearing.South (0, 0)
+    let movedRobot = advance robot
+    Assert.That(movedRobot, Is.EqualTo(createRobot Bearing.South (0, -1)))
+
+[<Test>]
+let ``Can advance west`` () =
+    let robot = createRobot Bearing.West (0, 0)
+    let movedRobot = advance robot
+    Assert.That(movedRobot, Is.EqualTo(createRobot Bearing.West (-1, 0)))
+
+[<Test>]
+let ``Robbie`` () =
+    let robbie = createRobot Bearing.East (-2, 1)
+    Assert.That(robbie, Is.EqualTo(createRobot Bearing.East (-2, 1)))
+
+    let movedRobbie = simulate robbie "RLAALAL"
+    Assert.That(movedRobbie, Is.EqualTo(createRobot Bearing.West (0, 2)))
+
+[<Test>]
+let ``Clutz`` () =
+    let clutz = createRobot Bearing.North (0, 0)
+    let movedClutz = simulate clutz "LAAARALA"
+    Assert.That(movedClutz, Is.EqualTo(createRobot Bearing.West (-4, 1)))
+
+[<Test>]
+let ``Sphero`` () =
+    let sphero = createRobot Bearing.East (2, -7)
+    let movedSphero = simulate sphero "RRAAAAALA"
+    Assert.That(movedSphero, Is.EqualTo(createRobot Bearing.South (-3, -8)))
+
+[<Test>]
+let ``Roomba`` () =
+    let roomba = createRobot Bearing.South (8, 4)
+    let movedRoomba = simulate roomba "LAAARRRALLLL"
+    Assert.That(movedRoomba, Is.EqualTo(createRobot Bearing.North (11, 5)))
