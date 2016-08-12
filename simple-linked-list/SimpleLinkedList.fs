@@ -32,11 +32,7 @@ let toList linkedList =
     tl [] linkedList
 
 let fromList list = 
-    let rec fl acc revlist =
-        match revlist with
-        | [] -> acc
-        | h :: t  -> fl (Cons(h, acc)) t
-    fl Nil (list |> List.rev)
+    List.foldBack create list Nil
 
 let reverse list = 
     let rec rev acc =
