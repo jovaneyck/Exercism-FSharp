@@ -383,6 +383,12 @@
     <Compile Include="prime-factors\PrimeFactorsTest.fs">
       <Link>PrimeFactorsTest.fs</Link>
     </Compile>
+    <Compile Include="saddle-points\SaddlePoint.fs">
+      <Link>SaddlePoint.fs</Link>
+    </Compile>
+    <Compile Include="saddle-points\SaddlePointTest.fs">
+      <Link>SaddlePointTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
