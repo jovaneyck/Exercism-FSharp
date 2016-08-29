@@ -6,7 +6,7 @@ let slices (input : string) length =
     if length > input.Length then
         let msg = 
             "Slice length should not be longer than the input string"
-        raise <| new ArgumentException(msg)
+        failwith msg
     else
         input 
         |> List.ofSeq

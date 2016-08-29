@@ -395,6 +395,12 @@
     <Compile Include="secret-handshake\SecretHandshakeTest.fs">
       <Link>SecretHandshakeTest.fs</Link>
     </Compile>
+    <Compile Include="error-handling\ErrorHandling.fs">
+      <Link>ErrorHandling.fs</Link>
+    </Compile>
+    <Compile Include="error-handling\ErrorHandlingTest.fs">
+      <Link>ErrorHandlingTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
