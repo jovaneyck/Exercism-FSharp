@@ -389,6 +389,12 @@
     <Compile Include="saddle-points\SaddlePointTest.fs">
       <Link>SaddlePointTest.fs</Link>
     </Compile>
+    <Compile Include="secret-handshake\SecretHandshake.fs">
+      <Link>SecretHandshake.fs</Link>
+    </Compile>
+    <Compile Include="secret-handshake\SecretHandshakeTest.fs">
+      <Link>SecretHandshakeTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
