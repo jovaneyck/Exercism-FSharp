@@ -38,7 +38,7 @@ let splitCodons (strand : string) =
     strand
     |> Seq.chunkBySize 3
     |> List.ofSeq
-    |> List.map String.Concat
+    |> List.map String
 
 let translateCodon c =
     match translations |> Map.tryFind c with
