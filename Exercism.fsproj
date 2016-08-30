@@ -401,6 +401,12 @@
     <Compile Include="error-handling\ErrorHandlingTest.fs">
       <Link>ErrorHandlingTest.fs</Link>
     </Compile>
+    <Compile Include="protein-translation\ProteinTranslation.fs">
+      <Link>ProteinTranslation.fs</Link>
+    </Compile>
+    <Compile Include="protein-translation\ProteinTranslationTest.fs">
+      <Link>ProteinTranslationTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
