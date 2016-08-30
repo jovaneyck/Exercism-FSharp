@@ -49,7 +49,7 @@ let ``Stops translation if stop codon present`` () =
 
 [<Test>]
 let ``Stops translation of longer strand`` () =
-    Assert.That(translate "UGGUGUUAUUAAUGGUUU'", Is.EqualTo(["Tryptophan"; "Cysteine"; "Tyrosine"]))
+    Assert.That(translate "UGGUGUUAUUAAUGGUUU", Is.EqualTo(["Tryptophan"; "Cysteine"; "Tyrosine"]))
 
 [<Test>]
 let ``Throws for invalid codons`` () =

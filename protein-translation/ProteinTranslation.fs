@@ -1,5 +1,7 @@
 ﻿module ProteinTranslation
 
+open System
+
 type Protein =
     | Methionine
     | Phenylalanine
@@ -8,7 +10,7 @@ type Protein =
     | Tyrosine
     | Cysteine
     | Tryptophan
-    | STOP //Not the cleanest bit of modeling here.
+    | STOP //Not the cleanest bit of domain modeling here.
 
 let translations = 
  [
@@ -32,28 +34,24 @@ let translations =
  ]
  |> Map.ofList
 
-let toString = sprintf "%A"
-
-let rec translateCodons acc codons =
-    match codons with
-    | [] -> acc
-    | c :: cs -> 
-        match translations |> Map.tryFind c with
-        | None -> failwithf "Unknown codon: %s" c
-        | Some c ->
-            match c with
-            | STOP -> acc
-            | translation -> translateCodons (translation :: acc) cs
-
 let splitCodons (strand : string) =
     strand
     |> Seq.chunkBySize 3
     |> List.ofSeq
-    |> (List.map (System.String.Concat))
+    |> List.map String.Concat
 
-let translate (strand : string) =
+let translateCodon c =
+    match translations |> Map.tryFind c with
+    | None -> failwithf "Unknown codon: %s" c
+    | Some codon -> codon
+
+let isStop c = c = STOP
+
+let toString = sprintf "%A"
+
+let translate strand =
     strand 
     |> splitCodons
-    |> translateCodons []
-    |> List.rev
+    |> List.map translateCodon
+    |> List.takeWhile (not << isStop)
     |> List.map toString
