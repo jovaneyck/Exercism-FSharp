@@ -407,6 +407,12 @@
     <Compile Include="protein-translation\ProteinTranslationTest.fs">
       <Link>ProteinTranslationTest.fs</Link>
     </Compile>
+    <Compile Include="isogram\Isogram.fs">
+      <Link>Isogram.fs</Link>
+    </Compile>
+    <Compile Include="isogram\IsogramTest.fs">
+      <Link>IsogramTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
