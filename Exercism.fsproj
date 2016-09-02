@@ -59,6 +59,12 @@
     <Compile Include="phone-number\PhoneNumberTest.fs">
       <Link>PhoneNumberTest.fs</Link>
     </Compile>
+    <Compile Include="perfect-numbers\PerfectNumbers.fs">
+      <Link>PerfectNumbers.fs</Link>
+    </Compile>
+    <Compile Include="perfect-numbers\PerfectNumbersTest.fs">
+      <Link>PerfectNumbersTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
