@@ -53,8 +53,12 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Scratchpad.fsx" />
-    <Compile Include="PhoneNumber.fs" />
-    <Compile Include="PhoneNumberTest.fs" />
+    <Compile Include="phone-number\PhoneNumber.fs">
+      <Link>PhoneNumber.fs</Link>
+    </Compile>
+    <Compile Include="phone-number\PhoneNumberTest.fs">
+      <Link>PhoneNumberTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
