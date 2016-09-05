@@ -65,6 +65,12 @@
     <Compile Include="perfect-numbers\PerfectNumbersTest.fs">
       <Link>PerfectNumbersTest.fs</Link>
     </Compile>
+    <Compile Include="binary-search\BinarySearch.fs">
+      <Link>BinarySearch.fs</Link>
+    </Compile>
+    <Compile Include="binary-search\BinarySearchTest.fs">
+      <Link>BinarySearchTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
