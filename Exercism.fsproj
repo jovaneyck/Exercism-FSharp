@@ -71,6 +71,18 @@
     <Compile Include="binary-search\BinarySearchTest.fs">
       <Link>BinarySearchTest.fs</Link>
     </Compile>
+    <Compile Include="all-your-base\AllYourBase.fs">
+      <Link>AllYourBase.fs</Link>
+    </Compile>
+    <Compile Include="all-your-base\AllYourBaseTest.fs">
+      <Link>AllYourBaseTest.fs</Link>
+    </Compile>
+    <Compile Include="house\House.fs">
+      <Link>House.fs</Link>
+    </Compile>
+    <Compile Include="house\HouseTest.fs">
+      <Link>HouseTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
