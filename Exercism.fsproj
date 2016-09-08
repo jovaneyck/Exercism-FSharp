@@ -83,6 +83,12 @@
     <Compile Include="house\HouseTest.fs">
       <Link>HouseTest.fs</Link>
     </Compile>
+    <Compile Include="list-ops\ListOps.fs">
+      <Link>ListOps.fs</Link>
+    </Compile>
+    <Compile Include="list-ops\ListOpsTest.fs">
+      <Link>ListOpsTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">

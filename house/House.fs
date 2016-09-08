@@ -28,7 +28,6 @@ let rec toVerse =
 
 let rhyme = 
     [1..sentences.Length]
-    |> List.map sentencesForVerse
-    |> List.map toVerse
-    |> List.map (sprintf "This is %s.")
+    |> List.map 
+        (sentencesForVerse >> toVerse >> (sprintf "This is %s."))
     |> String.concat "\n\n"
