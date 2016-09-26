@@ -89,6 +89,12 @@
     <Compile Include="list-ops\ListOpsTest.fs">
       <Link>ListOpsTest.fs</Link>
     </Compile>
+    <Compile Include="dot-dsl\DotDsl.fs">
+      <Link>DotDsl.fs</Link>
+    </Compile>
+    <Compile Include="dot-dsl\DotDslTest.fs">
+      <Link>DotDslTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
