@@ -25,33 +25,15 @@ let edge start stop attributes =
     Edge {start = start; stop = stop; attributes = (attributes |> List.map buildAttribute)}
 
 let nodes g = 
-    let rec nodes' acc g = 
-        match g with
-        | [] -> 
-            acc
-            |> List.sortBy (fun n -> n.name)
-            |> List.map Node
-        | Node n :: t -> nodes' (n :: acc) t
-        | _ :: t -> nodes' acc t
-    nodes' [] g
+    g 
+    |> List.filter (function Node _ -> true | _ -> false)
+    |> List.sort
 let edges g = 
-    let rec edges' acc g = 
-        match g with
-        | [] -> 
-            acc
-            |> List.sortBy (fun e -> e.start)
-            |> List.map Edge
-        | Edge e :: t -> edges' (e :: acc) t
-        | _ :: t -> edges' acc t
-    edges' [] g
+    g
+    |> List.filter (function Edge _ -> true | _ -> false)
+    |> List.sort
 
 let attrs g = 
-    let rec attrs' acc g = 
-            match g with
-            | [] -> 
-                acc
-                |> List.sortBy (fun (a : Attribute) -> a.name)
-                |> List.map Attribute
-            | Attribute a :: t -> attrs' (a :: acc) t
-            | _ :: t -> attrs' acc t
-    attrs' [] g
+    g
+    |> List.filter (function Attribute _ -> true | _ -> false)
+    |> List.sort
