@@ -95,6 +95,12 @@
     <Compile Include="dot-dsl\DotDslTest.fs">
       <Link>DotDslTest.fs</Link>
     </Compile>
+    <Compile Include="parallel-letter-frequency\ParallelLetterFrequency.fs">
+      <Link>ParallelLetterFrequency.fs</Link>
+    </Compile>
+    <Compile Include="parallel-letter-frequency\ParallelLetterFrequencyTest.fs">
+      <Link>ParallelLetterFrequencyTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">

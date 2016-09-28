@@ -1,0 +1,14 @@
+# Parallel Letter Frequency
+
+Write a program that counts the frequency of letters in texts using parallel computation.
+
+Parallelism is about doing things in parallel that can also be done
+sequentially. A common example is counting the frequency of letters.
+Create a function that returns the total frequency of each letter in a
+list of texts and that employs parallelism.
+
+
+
+## Submitting Incomplete Problems
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+
