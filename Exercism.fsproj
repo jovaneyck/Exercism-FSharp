@@ -107,6 +107,12 @@
     <Compile Include="simple-cipher\SimpleCipherTest.fs">
       <Link>SimpleCipherTest.fs</Link>
     </Compile>
+    <Compile Include="tree-building\TreeBuilding.fs">
+      <Link>TreeBuilding.fs</Link>
+    </Compile>
+    <Compile Include="tree-building\TreeBuildingTest.fs">
+      <Link>TreeBuildingTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
