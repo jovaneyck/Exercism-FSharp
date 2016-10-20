@@ -113,6 +113,12 @@
     <Compile Include="tree-building\TreeBuildingTest.fs">
       <Link>TreeBuildingTest.fs</Link>
     </Compile>
+    <Compile Include="scale-generator\ScaleGenerator.fs">
+      <Link>ScaleGenerator.fs</Link>
+    </Compile>
+    <Compile Include="scale-generator\ScaleGeneratorTest.fs">
+      <Link>ScaleGeneratorTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
