@@ -119,6 +119,12 @@
     <Compile Include="scale-generator\ScaleGeneratorTest.fs">
       <Link>ScaleGeneratorTest.fs</Link>
     </Compile>
+    <Compile Include="food-chain\FoodChain.fs">
+      <Link>FoodChain.fs</Link>
+    </Compile>
+    <Compile Include="food-chain\FoodChainTest.fs">
+      <Link>FoodChainTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
