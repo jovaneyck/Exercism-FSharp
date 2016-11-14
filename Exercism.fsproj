@@ -125,6 +125,12 @@
     <Compile Include="food-chain\FoodChainTest.fs">
       <Link>FoodChainTest.fs</Link>
     </Compile>
+    <Compile Include="grep\Grep.fs">
+      <Link>Grep.fs</Link>
+    </Compile>
+    <Compile Include="grep\GrepTest.fs">
+      <Link>GrepTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
