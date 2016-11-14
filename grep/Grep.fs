@@ -2,19 +2,41 @@
 
 open System.IO
 
-let contains pattern (text : string) = text.Contains(pattern)
-
-let toLower (text : string) = text.ToLower()
-
-let containsCaseInsensitive pattern text = contains (pattern |> toLower) (text |> toLower)
-
-let matchesFullLine ignoreCase (pattern : string) (text : string) = 
-    if ignoreCase then
-        pattern.ToLower() = text.ToLower()
-    else
-        pattern = text
-
 type Hit = {fileName : string; lineNumber : int; text : string}
+
+//messy filter/printer composition :(
+let contains pattern (text : string) = text.Contains(pattern)
+let toLower (text : string) = text.ToLower()
+let containsCaseInsensitive pattern text = contains (pattern |> toLower) (text |> toLower)
+let matchesFullLine ignoreCase pattern text = 
+    if ignoreCase then ( pattern |> toLower) = ( text |> toLower)
+    else pattern = text
+
+let buildFilter flag =
+    let filter =
+        if flag "x" then matchesFullLine (flag "i")
+        elif flag "i" then containsCaseInsensitive
+        else contains
+
+    if flag "v" then fun p t -> not <| filter p t
+    else filter
+
+let printLine {text = text} = text
+let printWithLineNumber {lineNumber = nb; text = text} = sprintf "%d:%s" nb text
+let printFileName {fileName = fileName} = fileName
+
+let buildPrinter flag nbFiles =
+        if flag "l" then 
+            printFileName
+        else
+            let linePrinter =
+                if flag "n" then printWithLineNumber
+                else printLine
+
+            if nbFiles > 1 then
+                fun l -> sprintf "%s:%s" l.fileName (linePrinter l)
+            else 
+                linePrinter
 
 let indexed lines =
     lines
@@ -27,44 +49,12 @@ let grepLines filter pattern (fileName, lines) =
     |> Seq.filter (fun (nb, line) -> filter pattern line)
     |> Seq.map (fun (nb, line) -> {fileName = fileName; lineNumber = nb; text = line})
 
-let flagEnabled (flags : string) flag =
-    flags.Contains(flag)
+let flagEnabled (flags : string) flag = flags.Contains(flag)
 
 let grepWith reader pattern flags files = 
-    let flag = flagEnabled flags
-
-    //Clean up this messy composition :(
-    let printer =
-        let linePrinter =
-            if flag "n" then
-                fun {lineNumber = nb; text = text} -> sprintf "%d:%s" nb text
-            else
-                fun {text = line} -> line
-
-        if flag "l" then
-            fun {fileName = fileName} -> fileName
-        elif files |> List.length > 1 then
-            fun l -> sprintf "%s:%s" l.fileName (linePrinter l)
-        else 
-            linePrinter
-
-    let filter =
-        let fullLineFilter =
-            let caseFilter =
-                if flag "i" then
-                    containsCaseInsensitive
-                else
-                    contains
-
-            if flag "x" then
-                (fun p t -> caseFilter p t && matchesFullLine (flag "i") p t)
-            else
-                caseFilter
-
-        if flag "v" then
-            fun p t -> not (fullLineFilter p t)
-        else 
-            fullLineFilter
+    let flagChecker = flagEnabled flags
+    let filter = buildFilter flagChecker
+    let printer = buildPrinter flagChecker (files |> List.length )
 
     let hits =
         files
@@ -73,15 +63,11 @@ let grepWith reader pattern flags files =
         |> Seq.map printer
         |> Seq.map (fun line -> line + "\n")
 
-    let result =
-        if flag "l" then
-            hits
-            |> Seq.distinct
-        else
-            hits
+    let resultLines =
+        if flagChecker "l" then hits |> Seq.distinct
+        else hits
 
-    result
-    |> String.concat ""
+    resultLines |> String.concat ""
     
 let readLines file = File.ReadLines(file)
 
