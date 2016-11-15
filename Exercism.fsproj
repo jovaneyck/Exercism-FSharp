@@ -131,6 +131,12 @@
     <Compile Include="grep\GrepTest.fs">
       <Link>GrepTest.fs</Link>
     </Compile>
+    <Compile Include="custom-set\CustomSet.fs">
+      <Link>CustomSet.fs</Link>
+    </Compile>
+    <Compile Include="custom-set\CustomSetTest.fs">
+      <Link>CustomSetTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
