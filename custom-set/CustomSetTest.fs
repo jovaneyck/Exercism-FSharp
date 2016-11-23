@@ -221,7 +221,6 @@ let ``Union of an empty set and non-empty set is the non-empty set`` () =
     Assert.That(union left right = expected)
 
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``Union of a non-empty set and empty set is the non-empty set`` () =
     let left = fromList [1; 3]
     let right = empty

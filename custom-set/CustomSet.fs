@@ -35,6 +35,5 @@ let difference {Elements = l} r =
     |> List.filter (fun v -> not <| contains v r)
     |> fromList
 let union {Elements = l} {Elements = r} = 
-    l
-    |> List.append r
+    l @ r
     |> fromList

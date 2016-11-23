@@ -137,6 +137,12 @@
     <Compile Include="custom-set\CustomSetTest.fs">
       <Link>CustomSetTest.fs</Link>
     </Compile>
+    <Compile Include="ledger\Ledger.fs">
+      <Link>Ledger.fs</Link>
+    </Compile>
+    <Compile Include="ledger\LedgerTest.fs">
+      <Link>LedgerTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
