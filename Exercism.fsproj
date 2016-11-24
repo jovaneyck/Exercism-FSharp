@@ -143,6 +143,12 @@
     <Compile Include="ledger\LedgerTest.fs">
       <Link>LedgerTest.fs</Link>
     </Compile>
+    <Compile Include="circular-buffer\CircularBuffer.fs">
+      <Link>CircularBuffer.fs</Link>
+    </Compile>
+    <Compile Include="circular-buffer\CircularBufferTest.fs">
+      <Link>CircularBufferTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
