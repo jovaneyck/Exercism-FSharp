@@ -149,6 +149,12 @@
     <Compile Include="circular-buffer\CircularBufferTest.fs">
       <Link>CircularBufferTest.fs</Link>
     </Compile>
+    <Compile Include="markdown\Markdown.fs">
+      <Link>Markdown.fs</Link>
+    </Compile>
+    <Compile Include="markdown\MarkdownTest.fs">
+      <Link>MarkdownTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">

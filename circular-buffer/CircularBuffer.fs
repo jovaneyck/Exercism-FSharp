@@ -11,7 +11,7 @@ let private isFull b =
 let write c b =
     if isFull b
     then failwithf "Cannot write to a full buffer."
-    else {b with elements = List.append b.elements [c]} //YOLO
+    else {b with elements = b.elements @ [c]} //YOLO
 
 let read b = 
     match b.elements with
