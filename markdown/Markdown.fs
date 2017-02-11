@@ -29,6 +29,9 @@ let rec replaceWithTag marker tagName line =
 let emphasis = replaceWithTag "__" "em"
 let italics = replaceWithTag "_" "i"
 
+let listitem text = 
+    sprintf "<li>%s</li>" text
+
 let paragraph use_p_tag line =
     if use_p_tag then
         sprintf "<p>%s</p>" line
@@ -36,7 +39,6 @@ let paragraph use_p_tag line =
         line
 
 let handleHeaders (line : string) =
-    //Not 100% behaviour-preserving, but YOLO
     let headerLevel = 
         line 
         |> Seq.takeWhile ((=) '#')
@@ -45,45 +47,42 @@ let handleHeaders (line : string) =
 
     sprintf "<h%d>%s</h%d>" headerLevel remainder headerLevel
 
+let appendTo (builder : System.Text.StringBuilder) (text : string) = 
+    builder.Append(text) |> ignore
+
 let parse (markdown: string) =
-   let mutable html = ""
+   let html = new System.Text.StringBuilder()
+   let append = appendTo html
    let mutable isList = false
 
-   let lines = markdown.Split('\n')
-
-   for i = 0 to lines.Length - 1 do
-       let line = lines.[i]
-       if line.StartsWith("*") then
+   markdown.Split('\n')
+   |> Array.iter (fun line -> 
+        if line.StartsWith("*") then
             if not isList then  
-                html <- html + "<ul>"
+                append "<ul>"
                 isList <- true
 
-            let trimmed = lines.[i].[2..]   
+            let trimmed = line.[2..]   
             let use_p_tag = not (trimmed.StartsWith "__" || trimmed.StartsWith "_")
 
-            let parsed =
-                trimmed
-                |> emphasis
-                |> italics
-                |> (paragraph use_p_tag)
-
-            let listItem = sprintf "<li>%s</li>" parsed
-            
-            html <- html + listItem
-
-       elif line.StartsWith("#") then
-            let parsed = handleHeaders line
-            html <- html + parsed
-       else 
-            let parsed =
-                line
-                |> emphasis
-                |> italics
-                |> (paragraph true)
-
-            html <- html + parsed
+            trimmed
+            |> emphasis
+            |> italics
+            |> (paragraph use_p_tag)
+            |> listitem
+            |> append
+        elif line.StartsWith("#") then
+            line
+            |> handleHeaders
+            |> append
+        else 
+            line
+            |> emphasis
+            |> italics
+            |> (paragraph true)
+            |> append)
 
    if isList then
-       html <- html + "</ul>"
+       append "</ul>"
 
-   html
+   html.ToString()

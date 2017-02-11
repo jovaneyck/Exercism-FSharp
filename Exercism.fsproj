@@ -155,6 +155,12 @@
     <Compile Include="markdown\MarkdownTest.fs">
       <Link>MarkdownTest.fs</Link>
     </Compile>
+    <Compile Include="run-length-encoding\RunLengthEncoding.fs">
+      <Link>RunLengthEncoding.fs</Link>
+    </Compile>
+    <Compile Include="run-length-encoding\RunLengthEncodingTest.fs">
+      <Link>RunLengthEncodingTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
