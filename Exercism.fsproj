@@ -161,6 +161,12 @@
     <Compile Include="run-length-encoding\RunLengthEncodingTest.fs">
       <Link>RunLengthEncodingTest.fs</Link>
     </Compile>
+    <Compile Include="book-store\BookStore.fs">
+      <Link>BookStore.fs</Link>
+    </Compile>
+    <Compile Include="book-store\BookStoreTest.fs">
+      <Link>BookStoreTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">

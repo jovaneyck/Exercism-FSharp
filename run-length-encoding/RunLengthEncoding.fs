@@ -7,7 +7,7 @@ let toString (length, character) =
     | _ -> 
         let lengthAsChars = length |> string |> List.ofSeq
         List.append lengthAsChars [character]
-
+        
 let rec toLengthsAndChars text =
     if Seq.isEmpty text then
         Seq.empty
