@@ -167,6 +167,12 @@
     <Compile Include="book-store\BookStoreTest.fs">
       <Link>BookStoreTest.fs</Link>
     </Compile>
+    <Compile Include="tournament\Tournament.fs">
+      <Link>Tournament.fs</Link>
+    </Compile>
+    <Compile Include="tournament\TournamentTest.fs">
+      <Link>TournamentTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
