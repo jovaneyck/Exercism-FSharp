@@ -36,7 +36,6 @@ let ``Should find horizontal words written right-to-left`` () =
     Assert.That(actual, Is.EqualTo(Some ((6, 5), (1, 5))))
 
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``Should find vertical words written top-to-bottom`` () =
     let actual = find puzzle "ecmascript"
     Assert.That(actual, Is.EqualTo(Some ((10, 1), (10, 10))))

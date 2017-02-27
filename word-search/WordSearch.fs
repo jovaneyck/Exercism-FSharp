@@ -6,17 +6,19 @@ let indexed puzzle =
         (fun rowNb row -> 
             row 
             |> Seq.toList 
-            |> List.mapi (fun colNb col -> (colNb + 1, rowNb + 1), col))
+            |> List.mapi 
+                (fun colNb col -> 
+                    (colNb + 1, rowNb + 1), col))
     |> List.collect id
 
-let rows puzzle =
+let horizontal puzzle =
     puzzle
     |> List.groupBy (fun ((c,r),_) -> r)
     |> List.map snd
 
-let reverseRows puzzle =
+let reverseHorizontal puzzle =
     puzzle
-    |> rows
+    |> horizontal
     |> List.map (List.rev)
 
 let indexes word line = 
@@ -47,5 +49,5 @@ let orElse f v =
 
 let find puzzle word = 
     let input = puzzle |> indexed
-    (findIn rows word input)
-    |> (orElse (findIn reverseRows word input))
+    (findIn horizontal word input)
+    |> (orElse (findIn reverseHorizontal word input))
