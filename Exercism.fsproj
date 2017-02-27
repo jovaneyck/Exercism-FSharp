@@ -173,6 +173,12 @@
     <Compile Include="tournament\TournamentTest.fs">
       <Link>TournamentTest.fs</Link>
     </Compile>
+    <Compile Include="word-search\WordSearch.fs">
+      <Link>WordSearch.fs</Link>
+    </Compile>
+    <Compile Include="word-search\WordSearchTest.fs">
+      <Link>WordSearchTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">

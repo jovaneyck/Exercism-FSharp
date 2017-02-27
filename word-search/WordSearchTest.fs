@@ -17,12 +17,20 @@ let puzzle =
      "clojurermt"]
 
 [<Test>]
+let ``Finds start and end index of a substring``() =
+    Assert.That(indexes ['a';'b'] [(1,1), 'c';(2,1),'a';(3,1),'b'], Is.EqualTo(Some ((2,1), (3,1))))
+
+
+[<Test>]
+let ``Finds start and end index of a substring without allowing for intermediate irrelevant letters``() =
+    Assert.That(indexes ['a';'b'] [(1,1),'a'; (2,1), 'c'; (3,1),'b'], Is.EqualTo(None))
+
+[<Test>]
 let ``Should find horizontal words written left-to-right`` () =
     let actual = find puzzle "clojure"
     Assert.That(actual, Is.EqualTo(Some ((1, 10), (7, 10))))
 
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``Should find horizontal words written right-to-left`` () =
     let actual = find puzzle "elixir"
     Assert.That(actual, Is.EqualTo(Some ((6, 5), (1, 5))))
