@@ -16,10 +16,22 @@ let horizontal puzzle =
     |> List.groupBy (fun ((c,r),_) -> r)
     |> List.map snd
 
+let reverse lines =  List.map List.rev lines
+
 let reverseHorizontal puzzle =
     puzzle
     |> horizontal
-    |> List.map (List.rev)
+    |> reverse
+
+let vertical puzzle =
+    puzzle
+    |> List.groupBy (fun ((c,r),_) -> c)
+    |> List.map snd
+
+let reverseVertical puzzle =
+    puzzle
+    |> vertical
+    |> reverse
 
 let indexes word line = 
     let toResult indexes =
@@ -49,5 +61,8 @@ let orElse f v =
 
 let find puzzle word = 
     let input = puzzle |> indexed
-    (findIn horizontal word input)
-    |> (orElse (findIn reverseHorizontal word input))
+    let find direction = findIn direction word input
+    (find horizontal)
+    |> (orElse (find reverseHorizontal))
+    |> (orElse (find vertical))
+    |> (orElse (find reverseVertical))

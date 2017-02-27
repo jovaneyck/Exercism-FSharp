@@ -41,7 +41,6 @@ let ``Should find vertical words written top-to-bottom`` () =
     Assert.That(actual, Is.EqualTo(Some ((10, 1), (10, 10))))
 
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``Should find vertical words written bottom-to-top`` () =
     let actual = find puzzle "rust"
     Assert.That(actual, Is.EqualTo(Some ((9, 5), (9, 2))))
