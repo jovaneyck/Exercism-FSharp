@@ -14,6 +14,11 @@ let rows puzzle =
     |> List.groupBy (fun ((c,r),_) -> r)
     |> List.map snd
 
+let reverseRows puzzle =
+    puzzle
+    |> rows
+    |> List.map (List.rev)
+
 let indexes word line = 
     let toResult indexes =
         match indexes with
@@ -29,9 +34,18 @@ let indexes word line =
         | _ -> None
     indexesOf [] word line
 
-let find puzzle word = 
+let findIn lineBuilder word puzzle =
     puzzle
-    |> indexed
-    |> rows
+    |> lineBuilder
     |> Seq.choose (word |> Seq.toList |> indexes)
     |> Seq.tryHead
+
+let orElse f v =
+    match v with
+    | None -> f
+    | Some _ -> v
+
+let find puzzle word = 
+    let input = puzzle |> indexed
+    (findIn rows word input)
+    |> (orElse (findIn reverseRows word input))
