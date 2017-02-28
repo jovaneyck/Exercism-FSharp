@@ -20,6 +20,9 @@ let puzzle =
 let ``Finds start and end index of a substring``() =
     Assert.That(indexes ['a';'b'] [(1,1), 'c';(2,1),'a';(3,1),'b'], Is.EqualTo(Some ((2,1), (3,1))))
 
+[<Test>]
+let ``Finds start and end index of a substring when first letter is repeated in larger string``() =
+    Assert.That(indexes ['a';'b'] [(1,1), 'a';(2,1),'a';(3,1),'b'], Is.EqualTo(Some ((2,1), (3,1))))
 
 [<Test>]
 let ``Finds start and end index of a substring without allowing for intermediate irrelevant letters``() =
@@ -46,37 +49,73 @@ let ``Should find vertical words written bottom-to-top`` () =
     Assert.That(actual, Is.EqualTo(Some ((9, 5), (9, 2))))
 
 [<Test>]
-[<Ignore("Remove to run test")>]
+let ``Should partition diagonals`` () =
+    let input =
+        [(1,1),'1';(2,1),'2';(3,1),'3';
+        (1,2),'4';(2,2),'5';(3,2),'6';
+        (1,3),'7';(2,3),'8';(3,3),'9']
+    let expected = 
+        [
+            [((1, 1), '1'); ((2, 2), '5'); ((3, 3), '9')]; 
+            [((2, 1), '2'); ((3, 2), '6')];
+            [((3, 1), '3')]; 
+            [((1, 2), '4'); ((2, 3), '8')]; 
+            [((1, 3), '7')]
+        ]
+    
+    let actual = diagonal input
+
+    Assert.That(actual, Is.EqualTo(expected))
+
+[<Test>]
 let ``Should find diagonal words written top-left-to-bottom-right`` () =
     let actual = find puzzle "java"
     Assert.That(actual, Is.EqualTo(Some ((1, 1), (4, 4))))
 
 [<Test>]
-[<Ignore("Remove to run test")>]
-let ``Should find diagonal upper written bottom-right-to-top-left`` () =
+let ``Should find diagonal words written bottom-right-to-top-left`` () =
     let actual = find puzzle "lua"
     Assert.That(actual, Is.EqualTo(Some ((8, 9), (6, 7))))
 
 [<Test>]
-[<Ignore("Remove to run test")>]
-let ``Should find diagonal upper written bottom-left-to-top-right`` () =
+let ``Should partition mirrored diagonals`` () =
+    let input =
+        [(1,1),'1';(2,1),'2';(3,1),'3';(4,1),'4';
+         (1,2),'5';(2,2),'6';(3,2),'7';(4,2),'8';
+         (1,3),'9';(2,3),'0';(3,3),'A';(4,3),'B';
+         (1,4),'C';(2,4),'D';(3,4),'E';(4,4),'F']
+    let expected = 
+        [
+            [((1, 1), '1')]; 
+            [((2, 1), '2'); ((1, 2), '5')];
+            [((3, 1), '3'); ((2, 2), '6'); ((1, 3), '9')];
+            [((4, 1), '4'); ((3, 2), '7'); ((2, 3), '0'); ((1, 4), 'C')];
+            [((4, 2), '8'); ((3, 3), 'A'); ((2, 4), 'D')]; 
+            [((4, 3), 'B'); ((3, 4), 'E')];
+            [((4, 4), 'F')]
+        ]
+    
+    let actual = mirrorDiagonal input
+
+    Assert.That(actual, Is.EqualTo(expected))
+
+
+[<Test>]
+let ``Should find diagonal words written bottom-left-to-top-right`` () =
     let actual = find puzzle "lisp"
     Assert.That(actual, Is.EqualTo(Some ((3, 6), (6, 3))))
 
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``Should find diagonal upper written top-right-to-bottom-left`` () =
     let actual = find puzzle "ruby"    
     Assert.That(actual, Is.EqualTo(Some ((8, 6), (5, 9))))
 
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``Should not find words that are not in the puzzle`` () =
     let actual = find puzzle "haskell"
     Assert.That(actual, Is.EqualTo(None))
 
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``Should be able to search differently-sized puzzles`` () =
     let differentSizePuzzle =
         ["qwertyuiopz";
