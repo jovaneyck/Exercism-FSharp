@@ -61,35 +61,30 @@ let ``Consecutive strikes each get the two roll bonus`` () =
     Assert.That(score game, Is.EqualTo(Some 81))
     
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``A strike in the last frame gets a two roll bonus that is counted once`` () =
     let rolls = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 10; 7; 1]
     let game = rollMany rolls newGame
     Assert.That(score game, Is.EqualTo(Some 18))
     
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``Rolling a spare with the two roll bonus does not get a bonus roll`` () =
     let rolls = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 10; 7; 3]
     let game = rollMany rolls newGame
     Assert.That(score game, Is.EqualTo(Some 20))
     
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``Strikes with the two roll bonus do not get bonus rolls`` () =
     let rolls = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 10; 10; 10]
     let game = rollMany rolls newGame
     Assert.That(score game, Is.EqualTo(Some 30))
     
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``A strike with the one roll bonus after a spare in the last frame does not get a bonus`` () =
     let rolls = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 7; 3; 10]
     let game = rollMany rolls newGame
     Assert.That(score game, Is.EqualTo(Some 20))
     
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``All strikes is a perfect game`` () =
     let rolls = [10; 10; 10; 10; 10; 10; 10; 10; 10; 10; 10; 10]
     let game = rollMany rolls newGame
