@@ -55,4 +55,4 @@ let ``Iterating over larger element`` () =
 [<Test>]
 let ``Iterating over complex element`` () =
     let elements = fromList [4; 2; 1; 3; 6; 7; 5] |> toList
-    Assert.That(elements, Is.EqualTo([1; 2; 3; 4; 5; 6; 7])) 
+    Assert.That(elements, Is.EqualTo([1; 2; 3; 4; 5; 6; 7]))

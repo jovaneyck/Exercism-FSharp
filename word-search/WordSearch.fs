@@ -18,7 +18,7 @@ let horizontal puzzle =
     puzzle
     |> List.groupBy byRow
     |> List.map snd
-
+    
 let reverse lines =  List.map List.rev lines
 
 let vertical puzzle =
@@ -85,7 +85,7 @@ let indexes word line =
             None
     indexesOf [] word line
 
-let tryFind lineBuilder word puzzle =
+let tryFind word puzzle lineBuilder =
     puzzle
     |> lineBuilder
     |> Seq.choose (word |> Seq.toList |> indexes)
@@ -102,11 +102,5 @@ let find puzzle word =
         ]
         |> List.collect (fun dir -> [dir; dir >> reverse])
 
-    let rec firstHit directions =
-        match directions with
-        | [] -> None
-        |  dir :: dirs ->
-            tryFind dir word input
-            |> orElse (fun () -> firstHit dirs)
-
-    firstHit directions
+    directions 
+    |> Seq.tryPick (tryFind word input)
