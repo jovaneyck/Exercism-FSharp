@@ -185,6 +185,12 @@
     <Compile Include="bowling\BowlingTest.fs">
       <Link>BowlingTest.fs</Link>
     </Compile>
+    <Compile Include="transpose\Transpose.fs">
+      <Link>Transpose.fs</Link>
+    </Compile>
+    <Compile Include="transpose\TransposeTest.fs">
+      <Link>TransposeTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
