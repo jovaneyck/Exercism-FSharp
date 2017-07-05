@@ -91,70 +91,60 @@ let ``All strikes is a perfect game`` () =
     Assert.That(score game, Is.EqualTo(Some 300))
     
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``Rolls can not score negative points`` () =
     let rolls = [-1; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0]
     let game = rollMany rolls newGame
     Assert.That(score game, Is.EqualTo(None))
     
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``A roll can not score more than 10 points`` () =
     let rolls = [11; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0]
     let game = rollMany rolls newGame
     Assert.That(score game, Is.EqualTo(None))
     
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``Two rolls in a frame can not score more than 10 points`` () =
     let rolls = [5; 6; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0]
     let game = rollMany rolls newGame
     Assert.That(score game, Is.EqualTo(None))
     
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``Two bonus rolls after a strike in the last frame can not score more than 10 points`` () =
     let rolls = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 10; 5; 6]
     let game = rollMany rolls newGame
     Assert.That(score game, Is.EqualTo(None))
     
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``An unstarted game can not be scored`` () =
     let rolls = []
     let game = rollMany rolls newGame
     Assert.That(score game, Is.EqualTo(None))
     
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``An incomplete game can not be scored`` () =
     let rolls = [0; 0]
     let game = rollMany rolls newGame
     Assert.That(score game, Is.EqualTo(None))
     
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``A game with more than ten frames can not be scored`` () =
     let rolls = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0]
     let game = rollMany rolls newGame
     Assert.That(score game, Is.EqualTo(None))
     
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``Bonus rolls for a strike in the last frame must be rolled before score can be calculated`` () =
     let rolls = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 10]
     let game = rollMany rolls newGame
     Assert.That(score game, Is.EqualTo(None))
     
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``Both bonus rolls for a strike in the last frame must be rolled before score can be calculated`` () =
     let rolls = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 10; 10]
     let game = rollMany rolls newGame
     Assert.That(score game, Is.EqualTo(None))
     
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``Bonus roll for a spare in the last frame must be rolled before score can be calculated`` () =
     let rolls = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 7; 3]
     let game = rollMany rolls newGame
