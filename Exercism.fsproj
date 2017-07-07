@@ -59,6 +59,12 @@
     <Compile Include="rail-fence-cipher\RailFenceCipherTest.fs">
       <Link>RailFenceCipherTest.fs</Link>
     </Compile>
+    <Compile Include="bracket-push\BracketPush.fs">
+      <Link>BracketPush.fs</Link>
+    </Compile>
+    <Compile Include="bracket-push\BracketPushTest.fs">
+      <Link>BracketPushTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
