@@ -53,6 +53,12 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Scratchpad.fsx" />
+    <Compile Include="rail-fence-cipher\RailFenceCipher.fs">
+      <Link>RailFenceCipher.fs</Link>
+    </Compile>
+    <Compile Include="rail-fence-cipher\RailFenceCipherTest.fs">
+      <Link>RailFenceCipherTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
