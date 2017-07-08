@@ -65,6 +65,12 @@
     <Compile Include="bracket-push\BracketPushTest.fs">
       <Link>BracketPushTest.fs</Link>
     </Compile>
+    <Compile Include="sublist\Sublist.fs">
+      <Link>Sublist.fs</Link>
+    </Compile>
+    <Compile Include="sublist\SublistTest.fs">
+      <Link>SublistTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
