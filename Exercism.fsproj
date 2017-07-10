@@ -71,6 +71,12 @@
     <Compile Include="sublist\SublistTest.fs">
       <Link>SublistTest.fs</Link>
     </Compile>
+    <Compile Include="change\Change.fs">
+      <Link>Change.fs</Link>
+    </Compile>
+    <Compile Include="change\ChangeTest.fs">
+      <Link>ChangeTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
