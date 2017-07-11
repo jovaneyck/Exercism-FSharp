@@ -35,7 +35,7 @@ let ``Change with Lower Elbonia Coins`` () =
 [<Test>]
 let ``Large target values`` () =
     let actual = [1; 2; 5; 10; 20; 50; 100]
-    let target = 99
+    let target = 99//0
     let expected = Some [2; 2; 5; 20; 20; 50]//; 100; 100; 100; 100; 100; 100; 100; 100; 100]
     Assert.That(change target actual, Is.EqualTo(expected))
 
@@ -58,4 +58,11 @@ let ``Cannot find negative change values`` () =
     let actual = [1; 2; 5]
     let target = -5
     let expected = None
+    Assert.That(change target actual, Is.EqualTo(expected))
+
+[<Test>]
+let ``Prash test case`` () =
+    let actual = [10; 20; 40; 50]
+    let target = 80
+    let expected = Some [40; 40]
     Assert.That(change target actual, Is.EqualTo(expected))
