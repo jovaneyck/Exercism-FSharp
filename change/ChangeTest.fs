@@ -35,8 +35,8 @@ let ``Change with Lower Elbonia Coins`` () =
 [<Test>]
 let ``Large target values`` () =
     let actual = [1; 2; 5; 10; 20; 50; 100]
-    let target = 99//0
-    let expected = Some [2; 2; 5; 20; 20; 50]//; 100; 100; 100; 100; 100; 100; 100; 100; 100]
+    let target = 999
+    let expected = Some [2; 2; 5; 20; 20; 50; 100; 100; 100; 100; 100; 100; 100; 100; 100]
     Assert.That(change target actual, Is.EqualTo(expected))
 
 [<Test>]

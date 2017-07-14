@@ -1,26 +1,29 @@
 ﻿module Change
 
-let rec findChange amount denominations =
-    if amount < 0 then
-        None
-    elif amount = 0 then
-        Some <| [[]]
-    else
-        match denominations with
-        | [] -> None
-        | d :: ds when d <= amount -> 
-            let ignored = (findChange amount ds) 
-            let used = (findChange (amount - d) (d::ds))
+let change target coins =
+    let tryAddToPocket pocket coin =
+        let changeToReturn = target - List.sum pocket
+        if changeToReturn < coin 
+        then None
+        else coin :: pocket |> List.sort |> Some
+    let pocketsWithExtraCoin pocket =
+        coins 
+        |> List.choose (tryAddToPocket pocket)
+    let rec loop pockets =
+        let targetReached = 
+            pockets 
+            |> List.tryFind (List.sum >> (=) target)
+        match targetReached with
+        | Some p -> 
+            p 
+            |> List.sort 
+            |> Some
+        | None when List.isEmpty pockets -> 
+            None
+        | None ->
+            pockets
+            |> List.distinct
+            |> List.collect pocketsWithExtraCoin
+            |> loop
 
-            match ignored, used with
-            | None, None -> None
-            | None, Some b -> Some (b |> List.map(fun r -> d :: r))
-            | s, None -> s
-            | Some a, Some b -> Some (a @ (b |> List.map(fun r -> d :: r)))
-        | _ :: ds -> findChange amount ds    
-
-let change amount denominations = 
-    let sortedDenominations = denominations |> List.sortDescending
-    let coins = findChange amount sortedDenominations
-    coins  
-    |> Option.map (List.minBy List.length >> List.sort)
+    loop [[]]
