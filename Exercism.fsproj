@@ -77,6 +77,12 @@
     <Compile Include="change\ChangeTest.fs">
       <Link>ChangeTest.fs</Link>
     </Compile>
+    <Compile Include="minesweeper\Minesweeper.fs">
+      <Link>Minesweeper.fs</Link>
+    </Compile>
+    <Compile Include="minesweeper\MinesweeperTest.fs">
+      <Link>MinesweeperTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
