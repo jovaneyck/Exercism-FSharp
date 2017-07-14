@@ -83,6 +83,12 @@
     <Compile Include="minesweeper\MinesweeperTest.fs">
       <Link>MinesweeperTest.fs</Link>
     </Compile>
+    <Compile Include="diffie-hellman\DiffieHellman.fs">
+      <Link>DiffieHellman.fs</Link>
+    </Compile>
+    <Compile Include="diffie-hellman\DiffieHellmanTest.fs">
+      <Link>DiffieHellmanTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
