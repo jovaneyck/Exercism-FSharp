@@ -60,7 +60,6 @@ let ``Separate loops`` () =
     Assert.That(canChain actual, Is.True)
 
 [<Test>]
-[<Ignore>]
 let ``Ten elements`` () =
     let actual = [(1, 2); (5, 3); (3, 1); (1, 2); (2, 4); (1, 6); (2, 3); (3, 4); (5, 6)]
     Assert.That(canChain actual, Is.True)
