@@ -19,16 +19,15 @@ let rec distribute element list =
         else
             let h = Seq.head list
             let t = Seq.tail list
-            let asFirstElement = 
-                possibleOrientations 
-                |> Seq.map (fun element -> (Seq.append (Seq.singleton element) list))
-            yield! asFirstElement
-            let interleaved =
-                distribute element t
-                |> Seq.map (fun d -> Seq.append (Seq.singleton h) d)
-            yield! interleaved
+            let (a,_) = h
+            for orientation in possibleOrientations do 
+                let (_,d) = orientation
+                if d = a then
+                    yield (Seq.append (Seq.singleton orientation) list)
+
+            for d in distribute element t do
+                yield Seq.append (Seq.singleton h) d
     }
-    
                 
 let rec permutations l =
      if l |> Seq.isEmpty 
