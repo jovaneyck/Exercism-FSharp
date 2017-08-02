@@ -89,6 +89,12 @@
     <Compile Include="diffie-hellman\DiffieHellmanTest.fs">
       <Link>DiffieHellmanTest.fs</Link>
     </Compile>
+    <Compile Include="dominoes\Dominoes.fs">
+      <Link>Dominoes.fs</Link>
+    </Compile>
+    <Compile Include="dominoes\DominoesTest.fs">
+      <Link>DominoesTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">

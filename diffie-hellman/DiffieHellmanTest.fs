@@ -1,7 +1,5 @@
 ﻿module DiffieHellmanTest
 
-open System.Numerics
-
 open NUnit.Framework
 
 open DiffieHellman
