@@ -19,10 +19,10 @@ let rec distribute element list =
         else
             let h = Seq.head list
             let t = Seq.tail list
-            let (a,_) = h
+            let (firstDominoValue,_) = h
             for orientation in possibleOrientations do 
-                let (_,d) = orientation
-                if d = a then
+                let (_,dominoValueOfNext) = orientation
+                if dominoValueOfNext = firstDominoValue then
                     yield (Seq.append (Seq.singleton orientation) list)
 
             for d in distribute element t do
@@ -38,19 +38,19 @@ let rec permutations l =
         permutations t
         |> Seq.collect (distribute h)
 
-let rec validSequence c =
-    match c with
+let rec validSequence sequence =
+    match sequence with
     | [] -> true
     | [_] -> true
     | (_,a) :: (b,c) :: t -> a = b && (validSequence ((b,c) :: t))
 
-let validChain c =
-    match c with
+let validChain chain =
+    match chain with
     | [] -> true
     | _ ->
-        let (first,_) = List.head c
-        let (_,last) = List.last c
-        first = last && validSequence c
+        let (first,_) = List.head chain
+        let (_,last) = List.last chain
+        first = last && validSequence chain
 
 let canChain (dominoes : Domino list) = 
     dominoes
