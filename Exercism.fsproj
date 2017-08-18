@@ -95,6 +95,12 @@
     <Compile Include="dominoes\DominoesTest.fs">
       <Link>DominoesTest.fs</Link>
     </Compile>
+    <Compile Include="rectangles\Rectangles.fs">
+      <Link>Rectangles.fs</Link>
+    </Compile>
+    <Compile Include="rectangles\RectanglesTest.fs">
+      <Link>RectanglesTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
