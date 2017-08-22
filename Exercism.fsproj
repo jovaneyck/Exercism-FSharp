@@ -101,6 +101,12 @@
     <Compile Include="rectangles\RectanglesTest.fs">
       <Link>RectanglesTest.fs</Link>
     </Compile>
+    <Compile Include="hangman\Hangman.fs">
+      <Link>Hangman.fs</Link>
+    </Compile>
+    <Compile Include="hangman\HangmanTest.fs">
+      <Link>HangmanTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
