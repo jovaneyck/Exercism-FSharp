@@ -107,6 +107,12 @@
     <Compile Include="hangman\HangmanTest.fs">
       <Link>HangmanTest.fs</Link>
     </Compile>
+    <Compile Include="two-fer\TwoFer.fs">
+      <Link>TwoFer.fs</Link>
+    </Compile>
+    <Compile Include="two-fer\TwoFerTest.fs">
+      <Link>TwoFerTest.fs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Text.RegexProvider">
